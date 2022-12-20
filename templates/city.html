@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Get UFO Reports
+{% endblock %}
+
+{% block main %}
+
+<img src="/static/ufo_icons/ufo7.png" width="100" height="100" alt="">
+
+    <h5>Enter City and State:</h5>
+    <form action="/" method="post">
+        <p>
+            <input autocomplete="off" autofocus name="city" placeholder="City" type="text" required>
+        </p>
+        <p>
+            <select class="mx-auto" name="state" placeholder="State" style="width:auto;">
+
+            {% for state in states %}
+
+            <option value="{{ state }}">{{ state }}</option>
+
+            {% endfor %}
+        </select>
+
+
+        </p>
+        <p>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </p>
+    </form>
+    
+    <footer class="page-footer font-small blue">
+
+        <div class="footer-attribution text-center">
+         <a href="https://www.flaticon.com/free-icons/alien" title="alien icons">Alien icons created by Freepik - Flaticon</a>
+   
+        </div>
+   
+      </footer>
+{% endblock %}

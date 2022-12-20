@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Submit UFO Sighting Report
+{% endblock %}
+
+{% block main %}
+<h5>Report a UFO Sighting</h5>
+<br>
+<form action="/submit.html" method="post">
+    <div class="form-group">
+        <b>City:</b> <input autocomplete="off" autofocus name="city" id="city" type="text" required>
+    </div>
+    <br>
+    <div class="form-group">
+
+       <b>State:</b> 
+        <select class="mx-auto" name="state" id="state" placeholder="State" style="width:auto;">
+
+        {% for state in states %}
+
+        <option value="{{ state }}">{{ state }}</option>
+
+        {% endfor %}
+    </select>
+    </div>
+    <br>
+    <div class="form-group">
+        <b>Latitude:</b> <input autocomplete="off" autofocus id="latitude" name="latitude" type="numeric" required>
+        <b>Longitude:</b> <input autocomplete="off" autofocus id="longitude" name="longitude" type="numeric" required>
+    </div>
+    <p>
+        Don't know your latitude and longitude? <a href="https://www.latlong.net/">Look it up here.</a>
+    </p>
+    <br>
+    <div class="form-group">
+        <b>Duration (seconds):</b> <input autocomplete="off" autofocus id="duration_seconds" name="duration_seconds" type="numeric">
+    </div>
+    <br>
+    <div class="form-group">
+        <b>Duration (hours/minutes):</b> <input autocomplete="off" autofocus id="duration_minutes" name="duration_minutes" type="text" required>
+    </div>
+    <br>
+    <div class="form-group">
+        <b>Shape:</b> <input autocomplete="off" autofocus id="shape" name="shape" type="text" required>
+    </div>
+        <br>
+    <div class="form-group">
+        <label><b>Date and Time:</b></label>
+        <input placeholder="datetime" name="datetime" type="datetime-local" required>
+    </div>
+        <br>
+        <div class="row d-flex justify-content-center">
+            <div class="form-group" style="width:50%">
+                <label><b>Comments:</b></label>
+                <textarea class="form-control" rows="2" name="comments" id="comments"></textarea>
+            </div>
+        </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

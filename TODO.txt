@@ -1,0 +1,4 @@
+Fix timestamp issue
+Process date and time of sighting for input into MongoDB
+Make sure requirements.txt file is formatted correctly
+Try running this program not in Codespaces

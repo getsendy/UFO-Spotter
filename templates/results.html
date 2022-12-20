@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+    UFOs in Your City and State
+    
+{% endblock %}
+
+{% block main %}
+
+        <h3>Local Stats:</h3>
+        <p>
+            <b>Total sightings in your state:</b> {{state_count}}
+        </p>
+        <p>
+            <b>Total sightings in your city:</b>
+            {% for city in city_count %}
+                {{city["ufo_count"]}}
+            {% endfor %}
+        </p>
+
+
+        <br>
+
+        <h3>Recent UFO Sightings:</h3>
+
+        <div class="row mx-auto">
+
+            {% for ufo in recent_ufos %}
+
+            <div class="col-sm-6 mx-auto">
+                <div class="card text-white bg-secondary mb-3">
+                    <div class="card-body">
+                        <p> 
+                            <b>Date of Sighting: </b>{{ufo['datetime']}}
+                        </p>
+                        <p> 
+                            <b>Date Reported </b>{{ufo['date posted']}}
+                        </p>
+                        <p> 
+                            <b>Shape: </b>{{ufo['shape']}}
+                        </p>
+                        <p> 
+                            <b>Duration (hours/minutes): </b>{{ufo['duration (hours/min)']}} 
+                        </p>
+                        <p> 
+                            <b>Description: </b>{{ufo['comments']}} 
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+
+{% endblock %}
