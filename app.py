@@ -87,7 +87,6 @@ def submit():
         longitude = request.form.get("longitude")
         print(sighting_date)
 
-        # TODO get today's date correctly
         # Get date that user submitted the form
         # Attribution: Found this way to convert time of form submission here: https://www.programiz.com/python-programming/datetime/current-datetime
         today = date.today()
