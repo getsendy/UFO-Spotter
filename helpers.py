@@ -25,7 +25,7 @@ def get_count(city, state):
     return city_count
 
 def get_ufos(city, state):
-    """Gets report of 10 most recent UFO sightings for that city and state"""
+    """Gets report of UFO sightings for that city and state"""
 
     recent_ufos = client['ufos']['ufos'].aggregate([
         {
@@ -41,10 +41,6 @@ def get_ufos(city, state):
                 'datetime': -1
             }
         },
-        {
-            '$limit': 
-                10
-        }
     ])
 
     return recent_ufos
