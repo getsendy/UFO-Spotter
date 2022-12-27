@@ -10,7 +10,7 @@ app = Flask(__name__)
 if __name__ == "__main__":
     app.run()
 
-client = MongoClient('mongodb+srv://test:test@cluster0.e6xf1kc.mongodb.net/test')
+client = MongoClient('YOUR_CONNECTION_STRING')
 db = client['ufos']
 ufos = db.ufos
 
