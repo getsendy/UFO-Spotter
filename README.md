@@ -1,7 +1,7 @@
 # UFO Spotter
 
 #### Description:
-This is full-stack web application built with Python, Flask, and MongoDB Atlas along with HTML (with the help of Bootstrap) and CSS as markup languages. This app allows you to look up UFO sightings in your area in the U.S. based on a [publicly available dataset](https://www.kaggle.com/datasets/NUFORC/ufo-sightings) loaded to Atlas. You can also submit a UFO sighting of your own to the database so others can be aware of your sighting in their area. 
+This is full-stack web application built with Python, Flask, and MongoDB Atlas along with HTML (with the help of Bootstrap) and CSS as markup languages. This app allows you to look up UFO sightings in your area in the U.S. based on a [publicly available dataset](https://www.kaggle.com/datasets/NUFORC/ufo-sightings) loaded to Atlas. You can also submit a UFO sighting of your own to the database so others can be aware of your sighting in their area. To use this application code you will need to upload the dataset to your own free Atlas database and input your Atlas connection string in the app.py and helpers.py files. 
 
 #### Dependencies
 * The web program is written in Python 3 with the Flask framework.
