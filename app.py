@@ -53,7 +53,7 @@ def city():
         state_count = ufos.count_documents({"state": state})
 
         # Get number of UFO sightings in city and state as a list
-        city_count = list(get_count(city, state))
+        city_count = get_count(city, state)
 
         # Get list of recent UFO sightings
         recent_ufos = get_ufos(city, state)
