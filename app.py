@@ -89,13 +89,11 @@ def submit():
 
         # convert string style date into datetime format
         sighting_date = datetime.datetime.strptime(sighting_date, "%Y-%m-%dT%H:%M")
-        print(sighting_date)
 
         # Get date that user submitted the form
         # Attribution: Found this way to convert time of form submission here: https://www.programiz.com/python-programming/datetime/current-datetime
         today = date.today()
         today = today.strftime("%m/%d/%y")
-        print(today)
 
         # Return error message if user enters number in city name
         if request.form.get("city").isnumeric() is True:
@@ -123,8 +121,6 @@ def submit():
         
         # Add UFO sighting report to MongoDB Atlas database
         ufos.insert_one(ufo_report)
-
-        print(ufo_report)
 
         # Return thank-you message after report submission 
         return render_template("thank_you.html")
