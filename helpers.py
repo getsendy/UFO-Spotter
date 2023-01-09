@@ -3,7 +3,7 @@ import requests
 from flask import redirect, render_template, request
 from pymongo import MongoClient
 
-client = MongoClient('YOUR_CONNECTION_STRING')
+client = MongoClient('mongodb+srv://test:test@cluster0.e6xf1kc.mongodb.net/?retryWrites=true&w=majority')
 
 def get_count(city, state):
     """Count the UFO sightings for that city and state"""

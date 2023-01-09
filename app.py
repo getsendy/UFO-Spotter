@@ -1,5 +1,6 @@
 import re
 from datetime import date
+import datetime
 
 from flask import Flask, render_template, request
 from pymongo import MongoClient
@@ -10,7 +11,7 @@ app = Flask(__name__)
 if __name__ == "__main__":
     app.run()
 
-client = MongoClient('YOUR_CONNECTION_STRING')
+client = MongoClient('mongodb+srv://test:test@cluster0.e6xf1kc.mongodb.net/?retryWrites=true&w=majority')
 db = client['ufos']
 ufos = db.ufos
 
@@ -85,6 +86,9 @@ def submit():
         sighting_date = request.form.get("datetime")
         latitude = request.form.get("latitude")
         longitude = request.form.get("longitude")
+
+        # convert string style date into datetime format
+        sighting_date = datetime.datetime.strptime(sighting_date, "%Y-%m-%dT%H:%M")
         print(sighting_date)
 
         # Get date that user submitted the form
