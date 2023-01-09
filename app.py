@@ -76,7 +76,6 @@ def submit():
         ufo_report = {}
 
         # Get UFO report information from user form submission
-        # TODO get correct date input from user
         city = request.form.get("city")
         state = request.form.get("state").lower()
         shape = request.form.get("shape")
