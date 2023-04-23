@@ -20,6 +20,7 @@ This is full-stack web application built with Python, Flask, and MongoDB Atlas a
     * helpers.py
 * HTML and CSS are used as markup langauges.
 
+Create a virtual environment for your code with: python -m venv .venv; ./.venv/bin/activate; pip install -r requirements.txt; python app.py
 
 #### Files
 
